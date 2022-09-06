@@ -1,15 +1,16 @@
 const name = prompt("Hola guerrero, cual es tu nombre?").toLowerCase();
-const selfPower = Number(prompt("Veo que no estas en la base de datos, dime de cuanto es tu nivel de pelea por favor"));
+const selfPower = parseInt(prompt("Veo que no estas en la base de datos, dime de cuanto es tu nivel de pelea por favor"));
 
 alert(selfPower  + " no es un mal nivel pero podrias mejorar");
 
 const time = Number(prompt("Por cuantos dias te gustaria entrenar?"));
 
-const train = selfPower * time / 0.519;
+const train = selfPower * time / 0.3;
 
 alert("Eso estuvo bien no? ahora tu nivel es de " + train + ", pero pasemos a algo mas dificil!")
 
 alert("Podras elegir un contrincante entre  los siguientes: " )
+
 
 
 let personajes = [
