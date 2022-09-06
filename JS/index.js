@@ -11,9 +11,6 @@ alert("Eso estuvo bien no? ahora tu nivel es de " + train + ", pero pasemos a al
 
 alert("Podras elegir un contrincante entre  los siguientes: " )
 
-for (personaje of personajes) {
-    alert(personaje.name + ": " + personaje.power);      
-}
 
 let personajes = [
     {name: "Goku",
@@ -38,6 +35,9 @@ let personajes = [
 ]
 
 
+for (personaje of personajes) {
+    alert(personaje.name + ": " + personaje.power);      
+}
 let oponentPower = prompt("A quien te gustaria enfrentarte ahora?").toLowerCase()
 
 switch (oponentPower) {
