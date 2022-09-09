@@ -87,31 +87,32 @@ function reask() {
 
 function oponent() {
     let oponentChosen = prompt("A quien te gustaria enfrentarte ahora?").toLowerCase();
+    let personaje = personajes.find(pj => pj.name === oponentChosen);
     switch (oponentChosen) {
         case "krillin":
             oponentChosen = capitalizeFirstLetter(oponentChosen);
-            let personaje = personajes.find(pj => pj.name === oponentChosen);
-            alert(`${oponentChosen}, tiene ${personaje.power} de poder`);
+            personaje = personajes.find(pj => pj.name === oponentChosen);
+            alert(`${oponentChosen}, tiene ${personaje.power} de poder, dato curioso: ${personaje.dscr}`);
             break;
         case "piccoro":
             oponentChosen = capitalizeFirstLetter(oponentChosen);
             personaje = personajes.find(pj => pj.name === oponentChosen);
-            alert(`${oponentChosen}, tiene ${personaje.power} de poder`);
+            alert(`${oponentChosen}, tiene ${personaje.power} de poder, dato curioso: ${personaje.dscr}`);
             break;
         case "gohan":
             oponentChosen = capitalizeFirstLetter(oponentChosen);
             personaje = personajes.find(pj => pj.name === oponentChosen);
-            alert(`${oponentChosen}, tiene ${personaje.power} de poder`);
+            alert(`${oponentChosen}, tiene ${personaje.power} de poder, dato curioso: ${personaje.dscr}`);
             break;
         case "vegeta":
             oponentChosen = capitalizeFirstLetter(oponentChosen);
             personaje = personajes.find(pj => pj.name === oponentChosen);
-            alert(`${oponentChosen}, tiene ${personaje.power} de poder`);
+            alert(`${oponentChosen}, tiene ${personaje.power} de poder, dato curioso: ${personaje.dscr}`);
             break;
         case "goku":
             oponentChosen = capitalizeFirstLetter(oponentChosen);
             personaje = personajes.find(pj => pj.name === oponentChosen);
-            alert(`${oponentChosen}, tiene ${personaje.power} de poder`);
+            alert(`${oponentChosen}, tiene ${personaje.power} de poder, dato curioso: ${personaje.dscr}`);
             break;
         default:
             reask();
