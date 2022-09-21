@@ -1,3 +1,4 @@
+const btn = document.getElementById("btnCaptura")
 let personajes = [
     {
         name: "Goku",
@@ -24,15 +25,7 @@ let personajes = [
     }
 ]
 
-let userStat = {
-    name: prompt("¿Como te LLamas?"),
-    power: prompt("¿Cuanto poder de pelea tienes?"),
-    img: "https://w7.pngwing.com/pngs/529/687/png-transparent-person-illustration-human-body-computer-icons-anatomy-homo-sapiens-human-icon-miscellaneous-hand-human.png",
-    dscr: "Un simple humano",
-    race: "Humano"
-}
-
-personajes.push(userStat)
+personajeCard(personajes);
 
 function personajeCard(personajes) {
 
@@ -44,11 +37,30 @@ function personajeCard(personajes) {
         const divPj = document.createElement("div");
         divPj.classList.add("pj");
         divPj.innerHTML = `
-        <h3 class="tituloPJ">${personaje.name}</h3>
+        <h3 class="tituloPJ">Nombre: ${personaje.name}</h3>
         <img src="${personaje.img}" alt="${personaje.dscr}">
-        <p class="powerPj"> ${personaje.power}</p>
+        <p class="powerPj">Poder:  ${personaje.power}</p>
         `;
         pjCard.append(divPj);
     })
 }
-personajeCard(personajes);
+
+const enviarDatos = (event) => {
+    const userStat = {
+        name: document.getElementById("userName").value,
+        power: document.getElementById("userPower").value,
+        img: "https://images.vexels.com/media/users/3/141885/isolated/preview/cc2dcc350d1772f24bee9e0e55e3029a-hombre-cuerpo-humano.png",
+        dscr: "Un simple humano",
+        race: "Humano"
+    }
+    personajes.push(userStat);
+    console.log('d');
+    event.preventDefault();
+    personajeCard(personajes);
+
+}
+
+
+btn.addEventListener("click", enviarDatos)
+
+
