@@ -25,7 +25,6 @@ let personajes = [
     }
 ]
 
-personajeCard(personajes);
 
 function personajeCard(personajes) {
 
@@ -54,13 +53,29 @@ const enviarDatos = (event) => {
         race: "Humano"
     }
     personajes.push(userStat);
-    console.log('d');
+    localStorage.setItem('personajes', JSON.stringify(personajes))
     event.preventDefault();
+    personajeCard(personajes);
+
+    Swal.fire({
+        title: 'Perfecto!',
+        text: 'Tu personaje fue creado correctamente.',
+        imageUrl: 'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/SXU7HVDRJNDLJLDC5D755OYVU4.jpg',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Dragon Ball image',
+      })
+}
+
+btn.addEventListener("click", enviarDatos)
+
+const loadLocalStorage = () => {
+    if(localStorage.getItem('personajes')){
+        personajes = [];
+        personajes = JSON.parse(localStorage.getItem('personajes')).map((el) => el )
+    }
     personajeCard(personajes);
 
 }
 
-
-btn.addEventListener("click", enviarDatos)
-
-
+loadLocalStorage();
